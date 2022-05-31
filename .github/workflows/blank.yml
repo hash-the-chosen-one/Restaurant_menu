@@ -1,0 +1,17 @@
+
+from collections import namedtuple
+
+MenuEntry = namedtuple('MenuEntry', ['index','description','price'])
+_menu = []
+_menu.append(MenuEntry(1, 'Hawaiian', '$7.50'))
+_menu.append(MenuEntry(2, 'Champagne Ham & Cheese', '$7.50'))
+_menu.append(MenuEntry(3, 'Beef & Onion', '$7.50'))
+_menu.append(MenuEntry(40, 'Pepperoni', '$10.50'))
+_menu.append(MenuEntry(100, 'Simply Cheese', '$17.50'))
+
+for entry in _menu:
+    index = str(getattr(entry,'index')).ljust(5)
+    descr = getattr(entry,'description').ljust(25)
+    price = getattr(entry,'price').ljust(7)
+    print '{0}{1}{2}'.format(index,descr,price)
+
